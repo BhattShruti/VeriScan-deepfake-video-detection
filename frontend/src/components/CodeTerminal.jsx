@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
-const CodeTerminal = ({ lines = 5, animated = true, resultType = 'processing' }) => {
+const CodeTerminal = ({ lines = 5, animated = true, resultType = 'processing', confidence = '95.2' }) => {
   const [displayedLines, setDisplayedLines] = useState([])
-  
+
   const codeLines = [
     "> Analyzing video frames...",
     "> Extracting facial features...",
@@ -12,27 +12,27 @@ const CodeTerminal = ({ lines = 5, animated = true, resultType = 'processing' })
     "> Verifying authenticity...",
     "> Processing complete."
   ]
-  
+
   const resultLines = [
     "> Analysis complete",
     "> Deepfake probability: LOW",
     "> Video appears AUTHENTIC",
-    "> Confidence: 95.2%"
+    `> Confidence: ${confidence}%`
   ]
-  
+
   const deepfakeLines = [
     "> Analysis complete",
     "> Deepfake probability: HIGH",
     "> Warning: AI manipulation detected",
-    "> Confidence: 87.3%",
+    `> Confidence: ${confidence}%`,
     "> Recommendation: Verify source"
   ]
-  
+
   useEffect(() => {
     let linesToShow = codeLines
     if (resultType === 'authentic') linesToShow = resultLines
     if (resultType === 'deepfake') linesToShow = deepfakeLines
-    
+
     if (animated) {
       const timer = setTimeout(() => {
         setDisplayedLines(linesToShow.slice(0, lines))
@@ -45,7 +45,7 @@ const CodeTerminal = ({ lines = 5, animated = true, resultType = 'processing' })
   }, [lines, animated, resultType])
 
   return (
-    <div className="glass rounded-lg p-4 font-mono text-sm" style={{ 
+    <div className="glass rounded-lg p-4 font-mono text-sm" style={{
       background: 'rgba(10, 14, 39, 0.9)',
       border: '1px solid rgba(0, 212, 255, 0.3)',
       boxShadow: '0 0 20px rgba(0, 212, 255, 0.2)'

@@ -1,0 +1,60 @@
+# VeriScan: Deepfake Detection System - Project Breakdown
+
+## 1. The "Why" (The Problem)
+In today's digital age, seeing is no longer believing. AI-generated "Deepfakes" are becoming so realistic that they can be used to spread misinformation, commit fraud, or damage reputations. **VeriScan** is designed to act as a digital "truth filter" that analyzes videos to distinguish between what is authentic and what has been manipulated by AI.
+
+---
+
+## 2. The "What" (The Solution)
+VeriScan is a full-stack web application that uses a **Hybrid Deep Learning Architecture** (CNN + LSTM) to detect deepfakes. It doesn't just look at a single picture; it looks at how a face moves over time to spot the subtle "glitches" that AI often leaves behind.
+
+---
+
+## 3. The "How" (Technical Pipeline)
+
+### Step A: The Entry Point (Frontend & Backend)
+1.  **User Interface (React):** A user uploads a video file through a modern, responsive web page.
+2.  **API Gateway (Flask):** The video is sent to a Python server. This server acts as the "brain," managing the communication between the user's screen and the AI models.
+
+### Step B: Preprocessing (Preparing the Data)
+Before the AI can look at the video, we have to clean it up:
+*   **Frame Extraction:** We take a few frames (images) from the video.
+*   **Face Tracking:** We use a tool called **OpenCV** to find the face in every frame. 
+*   **Standardization:** We crop and resize the face to a standard size so the AI always sees the same format.
+
+### Step C: The Hybrid AI Model (The Muscle)
+We use two different types of "Artificial Brains" working together:
+1.  **CNN (Xception Net):** Think of this as the "Eyes." It looks at every individual frame of the face in high detail. It's great at spotting weird textures or unnatural skin patterns.
+2.  **LSTM (Long Short-Term Memory):** Think of this as the "Memory." Deepfakes often look good in one photo but look "jittery" or "wrong" when you see them move. The LSTM looks at the sequence of frames to see if the movement of the face is natural or if it's "flickering" like a typical AI generation.
+
+---
+
+## 4. The Training Process
+*   **Dataset:** We used thousands of examples of real and fake videos (like the **DFDC** dataset from Kaggle).
+*   **Transfer Learning:** We didn't start from scratch. We used a model that already "knows" what objects look like (Xception) and specially trained it to recognize the difference between real skin and AI-generated skin.
+*   **Weights:** The result of this training is a "Weights" file (`model_weights.h5`). This is the stored knowledge of the AI.
+
+---
+
+## 5. Topics to Study (For Your Defense)
+To explain this to your professors confidently, you should be familiar with these keywords:
+
+1.  **Computer Vision:** The field of teaching computers how to "see" and interpret digital images (using OpenCV).
+2.  **Convolutional Neural Networks (CNN):** The specific type of deep learning model used for analyzing images (Specifically "Xception Net").
+3.  **Recurrent Neural Networks (RNN/LSTM):** Models used for analyzing data that comes in a sequence (like video frames or words).
+4.  **Transfer Learning:** Taking an existing AI (trained on millions of images) and "fine-tuning" it for a specific task like Deepfake detection.
+5.  **Flask (REST API):** How web servers talk to front-end applications using the HTTP protocol.
+
+---
+
+## 6. Project Architecture Diagram
+```mermaid
+graph TD
+    A[User Uploads Video] --> B[React Frontend]
+    B --> C[Flask Backend]
+    C --> D[OpenCV: Face Detection]
+    D --> E[CNN: Spatial Feature Extraction]
+    E --> F[LSTM: Temporal Analysis]
+    F --> G[Probability/Result]
+    G --> B
+```

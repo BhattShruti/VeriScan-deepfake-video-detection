@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local runtime data
+backend/uploads/
+uploads/
+
+# Large artifacts (keep out of git)
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.h5
+*.pt
+*.pth
+*.onnx
+*.zip
+
+# Project-specific large/generated folders
+backend/test_videos/
+backend/training_videos/
+backend/local_demo_data/
+backend/demo_videos_clean/
+backend/models/
+results/
+docx_temp/
+

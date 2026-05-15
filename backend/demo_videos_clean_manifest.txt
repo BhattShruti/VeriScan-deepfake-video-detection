@@ -1,0 +1,15 @@
+deepfake1.mp4	DEEPFAKE	0.6722
+deepfake3.mp4	DEEPFAKE	0.6523
+deepfake4.mp4	DEEPFAKE	0.6103
+deepti.real.mp4	AUTHENTIC	0.7549
+niharika.real.mp4	AUTHENTIC	0.9064
+real1.mp4	AUTHENTIC	0.8878
+real2.mp4	AUTHENTIC	0.7505
+real3.mp4	AUTHENTIC	0.9176
+real4.mp4	AUTHENTIC	0.9165
+real5.mp4	AUTHENTIC	0.8550
+real6.mp4	AUTHENTIC	0.9145
+real_person_1.mp4	AUTHENTIC	0.7819
+real_person_2.mp4	AUTHENTIC	0.8788
+shruti.real.mp4	AUTHENTIC	0.9022
+shruti_real.mp4	AUTHENTIC	0.5569

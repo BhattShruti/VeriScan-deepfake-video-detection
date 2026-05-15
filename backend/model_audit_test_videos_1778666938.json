@@ -1,0 +1,675 @@
+{
+  "videos_used": 18,
+  "runs": {
+    "baseline_dfdc": {
+      "model_path": "C:\\Users\\91954\\Desktop\\Veri_scan\\backend\\model_weights.h5",
+      "evaluated": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "predictions": [
+        {
+          "video": "deepfake1.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5983,
+          "correct": true
+        },
+        {
+          "video": "deepfake2.mp4",
+          "label": 1,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "deepfake3.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.7107,
+          "correct": true
+        },
+        {
+          "video": "deepfake4.mp4",
+          "label": 1,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.767,
+          "correct": false
+        },
+        {
+          "video": "deepfake5.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6032,
+          "correct": true
+        },
+        {
+          "video": "deepti.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.8404,
+          "correct": true
+        },
+        {
+          "video": "niharika.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6818,
+          "correct": false
+        },
+        {
+          "video": "real1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6549,
+          "correct": true
+        },
+        {
+          "video": "real2.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.9616,
+          "correct": true
+        },
+        {
+          "video": "real3.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6728,
+          "correct": false
+        },
+        {
+          "video": "real4.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.7065,
+          "correct": false
+        },
+        {
+          "video": "real5.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.867,
+          "correct": true
+        },
+        {
+          "video": "real6.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.7183,
+          "correct": false
+        },
+        {
+          "video": "real7.mp4",
+          "label": 0,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "real_person_1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.8365,
+          "correct": true
+        },
+        {
+          "video": "real_person_2.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.904,
+          "correct": false
+        },
+        {
+          "video": "shruti.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5714,
+          "correct": false
+        },
+        {
+          "video": "shruti_real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6748,
+          "correct": true
+        }
+      ]
+    },
+    "runB_seq6": {
+      "model_path": "C:\\Users\\91954\\Desktop\\Veri_scan\\backend\\models\\runB_seq6.h5",
+      "evaluated": 16,
+      "correct": 9,
+      "accuracy": 0.5625,
+      "predictions": [
+        {
+          "video": "deepfake1.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5298,
+          "correct": true
+        },
+        {
+          "video": "deepfake2.mp4",
+          "label": 1,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "deepfake3.mp4",
+          "label": 1,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5647,
+          "correct": false
+        },
+        {
+          "video": "deepfake4.mp4",
+          "label": 1,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.561,
+          "correct": false
+        },
+        {
+          "video": "deepfake5.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5402,
+          "correct": true
+        },
+        {
+          "video": "deepti.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5668,
+          "correct": true
+        },
+        {
+          "video": "niharika.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5556,
+          "correct": false
+        },
+        {
+          "video": "real1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5325,
+          "correct": true
+        },
+        {
+          "video": "real2.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6799,
+          "correct": true
+        },
+        {
+          "video": "real3.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5484,
+          "correct": false
+        },
+        {
+          "video": "real4.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5488,
+          "correct": false
+        },
+        {
+          "video": "real5.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.501,
+          "correct": true
+        },
+        {
+          "video": "real6.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5385,
+          "correct": false
+        },
+        {
+          "video": "real7.mp4",
+          "label": 0,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "real_person_1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6115,
+          "correct": true
+        },
+        {
+          "video": "real_person_2.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5506,
+          "correct": false
+        },
+        {
+          "video": "shruti.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5219,
+          "correct": true
+        },
+        {
+          "video": "shruti_real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5404,
+          "correct": true
+        }
+      ]
+    },
+    "runC_seq14": {
+      "model_path": "C:\\Users\\91954\\Desktop\\Veri_scan\\backend\\models\\runC_seq14.h5",
+      "evaluated": 16,
+      "correct": 8,
+      "accuracy": 0.5,
+      "predictions": [
+        {
+          "video": "deepfake1.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5364,
+          "correct": true
+        },
+        {
+          "video": "deepfake2.mp4",
+          "label": 1,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "deepfake3.mp4",
+          "label": 1,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5611,
+          "correct": false
+        },
+        {
+          "video": "deepfake4.mp4",
+          "label": 1,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6427,
+          "correct": false
+        },
+        {
+          "video": "deepfake5.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5992,
+          "correct": true
+        },
+        {
+          "video": "deepti.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6768,
+          "correct": true
+        },
+        {
+          "video": "niharika.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.519,
+          "correct": false
+        },
+        {
+          "video": "real1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5071,
+          "correct": true
+        },
+        {
+          "video": "real2.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.7592,
+          "correct": true
+        },
+        {
+          "video": "real3.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6256,
+          "correct": false
+        },
+        {
+          "video": "real4.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6158,
+          "correct": false
+        },
+        {
+          "video": "real5.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5698,
+          "correct": false
+        },
+        {
+          "video": "real6.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5151,
+          "correct": true
+        },
+        {
+          "video": "real7.mp4",
+          "label": 0,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "real_person_1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6487,
+          "correct": true
+        },
+        {
+          "video": "real_person_2.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6242,
+          "correct": false
+        },
+        {
+          "video": "shruti.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5505,
+          "correct": false
+        },
+        {
+          "video": "shruti_real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5446,
+          "correct": true
+        }
+      ]
+    },
+    "runD_data20": {
+      "model_path": "C:\\Users\\91954\\Desktop\\Veri_scan\\backend\\models\\runD_data20.h5",
+      "evaluated": 16,
+      "correct": 7,
+      "accuracy": 0.4375,
+      "predictions": [
+        {
+          "video": "deepfake1.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.7861,
+          "correct": true
+        },
+        {
+          "video": "deepfake2.mp4",
+          "label": 1,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "deepfake3.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5177,
+          "correct": true
+        },
+        {
+          "video": "deepfake4.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5571,
+          "correct": true
+        },
+        {
+          "video": "deepfake5.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.8045,
+          "correct": true
+        },
+        {
+          "video": "deepti.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5523,
+          "correct": false
+        },
+        {
+          "video": "niharika.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6967,
+          "correct": false
+        },
+        {
+          "video": "real1.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6491,
+          "correct": false
+        },
+        {
+          "video": "real2.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.7929,
+          "correct": true
+        },
+        {
+          "video": "real3.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.7939,
+          "correct": false
+        },
+        {
+          "video": "real4.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.7965,
+          "correct": false
+        },
+        {
+          "video": "real5.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.5979,
+          "correct": false
+        },
+        {
+          "video": "real6.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.786,
+          "correct": false
+        },
+        {
+          "video": "real7.mp4",
+          "label": 0,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "real_person_1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6245,
+          "correct": true
+        },
+        {
+          "video": "real_person_2.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.8344,
+          "correct": false
+        },
+        {
+          "video": "shruti.real.mp4",
+          "label": 0,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.624,
+          "correct": false
+        },
+        {
+          "video": "shruti_real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5693,
+          "correct": true
+        }
+      ]
+    },
+    "runE_local_demo": {
+      "model_path": "C:\\Users\\91954\\Desktop\\Veri_scan\\backend\\models\\runE_local_demo.h5",
+      "evaluated": 16,
+      "correct": 15,
+      "accuracy": 0.9375,
+      "predictions": [
+        {
+          "video": "deepfake1.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6722,
+          "correct": true
+        },
+        {
+          "video": "deepfake2.mp4",
+          "label": 1,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "deepfake3.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6523,
+          "correct": true
+        },
+        {
+          "video": "deepfake4.mp4",
+          "label": 1,
+          "prediction": "DEEPFAKE",
+          "confidence": 0.6103,
+          "correct": true
+        },
+        {
+          "video": "deepfake5.mp4",
+          "label": 1,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.6477,
+          "correct": false
+        },
+        {
+          "video": "deepti.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.7549,
+          "correct": true
+        },
+        {
+          "video": "niharika.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.9064,
+          "correct": true
+        },
+        {
+          "video": "real1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.8878,
+          "correct": true
+        },
+        {
+          "video": "real2.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.7505,
+          "correct": true
+        },
+        {
+          "video": "real3.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.9176,
+          "correct": true
+        },
+        {
+          "video": "real4.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.9165,
+          "correct": true
+        },
+        {
+          "video": "real5.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.855,
+          "correct": true
+        },
+        {
+          "video": "real6.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.9145,
+          "correct": true
+        },
+        {
+          "video": "real7.mp4",
+          "label": 0,
+          "prediction": "ERROR",
+          "confidence": 0.0,
+          "correct": null
+        },
+        {
+          "video": "real_person_1.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.7819,
+          "correct": true
+        },
+        {
+          "video": "real_person_2.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.8788,
+          "correct": true
+        },
+        {
+          "video": "shruti.real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.9022,
+          "correct": true
+        },
+        {
+          "video": "shruti_real.mp4",
+          "label": 0,
+          "prediction": "AUTHENTIC",
+          "confidence": 0.5569,
+          "correct": true
+        }
+      ]
+    }
+  }
+}

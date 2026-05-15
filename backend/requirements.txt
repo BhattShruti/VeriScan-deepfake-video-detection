@@ -1,0 +1,8 @@
+tensorflow
+flask
+flask-cors
+opencv-python
+numpy
+werkzeug
+scikit-learn
+matplotlib

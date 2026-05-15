@@ -1,0 +1,36 @@
+# Implementation Plan - Detection Accuracy & Model Clarification
+
+The goal is to fix the false-positive detections on real videos and clarify the model architecture used in VeriScan.
+
+## Model Clarification
+
+The current project architecture consists of:
+1. **Haar Cascade (OpenCV)**: Used for face detection.
+2. **Xception CNN**: Used for spatial feature extraction (extracting deepfake indicators from frames).
+3. **LSTM (Hybrid Model)**: Used for temporal analysis (detecting inconsistencies across frame sequences).
+
+> [!IMPORTANT]
+> The system is currently in **Prototype Mode** because the `model_weights.h5` file is missing. In this mode, it relies on **Jitter Analysis** (measuring how much the face "shakes" relative to the frame) instead of deep learning features. This is why real, handheld videos are often incorrectly flagged as Deepfakes.
+
+## Proposed Changes
+
+### Backend
+#### [MODIFY] [detector.py](file:///c:/Users/91954/Desktop/Veri_scan/backend/detector.py)
+1. **Improve Jitter Heuristic**:
+   - Refine the jitter calculation to account for camera movement vs. artificial face flickering.
+   - Increase the stability requirement or use a rolling average of face positions to filter out natural handheld motion.
+2. **Architecture Alignment**:
+   - Ensure the code remains structured for the Xception+LSTM hybrid so that once weights are provided, the system transitions seamlessly.
+
+#### [NEW] [training_guide.md](file:///c:/Users/91954/Desktop/Veri_scan/backend/training_guide.md)
+- Provide a clear guide on how to use [train.py](file:///c:/Users/91954/Desktop/Veri_scan/backend/train.py) to generate the required `model_weights.h5` using a dataset like FaceForensics++ or Celeb-DF.
+
+## Verification Plan
+
+### Automated Tests
+- Run `python backend/test_api.py test_videos/real_sample.mp4` and verify it is detected as **AUTHENTIC**.
+- Run `python backend/test_api.py test_videos/deepfake_sample.mp4` and verify it is detected as **DEEPFAKE**.
+
+### Manual Verification
+- Upload the user's self-recorded video (currently in `uploads/`) through the frontend.
+- Verify that the result is consistently **AUTHENTIC** with high confidence.
