@@ -4,12 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import Button from '../components/Button'
 import InteractiveCard from '../components/InteractiveCard'
-import LoadingSpinner from '../components/LoadingSpinner'
-import ScanningAnimation from '../components/ScanningAnimation'
 import DeepfakeIcon from '../components/DeepfakeIcon'
-import CodeTerminal from '../components/CodeTerminal'
-import HackingVisual from '../components/HackingVisual'
-import Logo from '../components/Logo'
+import AILoadingScreen from '../components/AILoadingScreen'
 
 const Upload = () => {
   const [file, setFile] = useState(null)
@@ -95,45 +91,8 @@ const Upload = () => {
         <InteractiveCard glowColor={uploading ? "#00ffff" : "#8b5cf6"}>
           <div className="space-y-8">
             {uploading ? (
-              /* Dedicated Scanning View */
-              <motion.div
-                className="py-12 space-y-8"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-              >
-                <div className="text-center space-y-4">
-                  <div className="flex items-center justify-center gap-4 mb-6">
-                    <Logo size={60} animated={true} />
-                    <h2 className="text-4xl font-bold bg-gradient-text">Scanning in Progress</h2>
-                  </div>
-                  <p className="text-accent-cyan text-lg font-semibold animate-pulse">
-                    🔬 AI analysis engine is processing your video...
-                  </p>
-                </div>
-
-                <div className="relative">
-                  <HackingVisual />
-                  <div className="absolute inset-x-0 -bottom-6">
-                    <ScanningAnimation />
-                  </div>
-                </div>
-
-                <div className="mt-12">
-                  <CodeTerminal lines={8} animated={true} />
-                </div>
-
-                <div className="flex flex-col items-center gap-4 pt-8 border-t border-white-10">
-                  <LoadingSpinner size={80} />
-                  <div className="text-center">
-                    <p className="text-white-80 text-lg font-medium">
-                      Detecting facial inconsistencies and artifacts
-                    </p>
-                    <p className="text-white-50 text-sm mt-1">
-                      This may take 30-60 seconds depending on video length
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+              /* ── AI Loading Screen ── */
+              <AILoadingScreen />
             ) : (
               /* Upload Form View */
               <div className="space-y-8">

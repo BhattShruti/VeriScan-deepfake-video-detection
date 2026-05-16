@@ -853,3 +853,326 @@ code {
     font-size: 1.25rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   AI LOADING SCREEN  —  futuristic scanner overlay
+═══════════════════════════════════════════════════════════ */
+
+.ai-loading-root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+/* ── Scanner orb wrapper ─────────────────────────────────── */
+.ai-scanner-orb-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Glow rings */
+.ai-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  animation: ai-ring-pulse 2.4s ease-in-out infinite;
+}
+
+.ai-ring-1 {
+  width: 200px;
+  height: 200px;
+  border-color: rgba(0, 212, 255, 0.25);
+  animation-delay: 0s;
+}
+
+.ai-ring-2 {
+  width: 160px;
+  height: 160px;
+  border-color: rgba(0, 212, 255, 0.4);
+  animation-delay: 0.4s;
+}
+
+.ai-ring-3 {
+  width: 120px;
+  height: 120px;
+  border-color: rgba(139, 92, 246, 0.35);
+  animation-delay: 0.8s;
+}
+
+@keyframes ai-ring-pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.6; }
+  50%       { transform: scale(1.06); opacity: 1;   }
+}
+
+/* Rotating scan arc (outer) */
+.ai-scan-arc {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #00d4ff;
+  border-right-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.7), inset 0 0 16px rgba(0, 212, 255, 0.1);
+}
+
+/* Counter-rotating inner arc */
+.ai-scan-arc-inner {
+  position: absolute;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-bottom-color: #8b5cf6;
+  border-left-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.5);
+}
+
+/* Core eye */
+.ai-core {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(0, 212, 255, 0.15) 0%, rgba(10, 14, 39, 0.9) 100%);
+  border: 1.5px solid rgba(0, 212, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.4), inset 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+.ai-core-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(0, 212, 255, 0.9), transparent);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+}
+
+.ai-core-iris {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 212, 255, 0.7);
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
+  animation: ai-iris-pulse 1.8s ease-in-out infinite;
+}
+
+.ai-core-pupil {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00ffff 0%, #00d4ff 60%, rgba(0, 212, 255, 0.3) 100%);
+  box-shadow: 0 0 12px #00d4ff, 0 0 24px rgba(0, 212, 255, 0.5);
+  animation: ai-pupil-glow 1.8s ease-in-out infinite;
+}
+
+@keyframes ai-iris-pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.7; }
+  50%       { transform: scale(1.1); opacity: 1;   }
+}
+
+@keyframes ai-pupil-glow {
+  0%, 100% { box-shadow: 0 0 12px #00d4ff, 0 0 24px rgba(0, 212, 255, 0.5); }
+  50%       { box-shadow: 0 0 20px #00ffff, 0 0 40px rgba(0, 255, 255, 0.7); }
+}
+
+/* HUD corner brackets */
+.ai-bracket {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+}
+.ai-bracket-tl { top: 0;    left: 0;    animation: ai-bracket-flash 2s 0.0s infinite; }
+.ai-bracket-tr { top: 0;    right: 0;   animation: ai-bracket-flash 2s 0.5s infinite; }
+.ai-bracket-bl { bottom: 0; left: 0;    animation: ai-bracket-flash 2s 1.0s infinite; }
+.ai-bracket-br { bottom: 0; right: 0;   animation: ai-bracket-flash 2s 1.5s infinite; }
+
+@keyframes ai-bracket-flash {
+  0%, 80%, 100% { opacity: 0.6; }
+  40%           { opacity: 1;   filter: drop-shadow(0 0 4px #00d4ff); }
+}
+
+/* ── Title block ─────────────────────────────────────────── */
+.ai-loading-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ai-loading-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00d4ff 0%, #00ffff 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none; /* gradient text handles glow */
+  line-height: 1.2;
+}
+
+.ai-loading-subtitle {
+  font-size: 1rem;
+  color: rgba(0, 212, 255, 0.85);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ── Status pill ─────────────────────────────────────────── */
+.ai-status-wrap {
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.ai-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1.2rem;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.12);
+  max-width: 90%;
+}
+
+.ai-status-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.ai-status-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+/* ── Progress bar ────────────────────────────────────────── */
+.ai-progress-wrap {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ai-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-progress-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(0, 212, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ai-progress-pct {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #00ffff;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.ai-progress-track {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.ai-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #00ffff, #8b5cf6);
+  border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+  transition: width 0.4s ease;
+}
+
+/* Shimmer sweep across the fill */
+.ai-progress-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  animation: ai-shimmer 1.6s linear infinite;
+}
+
+@keyframes ai-shimmer {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(200%); }
+}
+
+/* ── Animated dots ───────────────────────────────────────── */
+.ai-dots-row {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00d4ff, #8b5cf6);
+  box-shadow: 0 0 6px rgba(0, 212, 255, 0.6);
+}
+
+/* ── Footer note ─────────────────────────────────────────── */
+.ai-loading-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 420px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Responsive tweaks ───────────────────────────────────── */
+@media (max-width: 480px) {
+  .ai-scanner-orb-wrap {
+    width: 160px;
+    height: 160px;
+  }
+  .ai-ring-1  { width: 160px; height: 160px; }
+  .ai-ring-2  { width: 126px; height: 126px; }
+  .ai-ring-3  { width: 94px;  height: 94px;  }
+  .ai-scan-arc       { width: 150px; height: 150px; }
+  .ai-scan-arc-inner { width: 116px; height: 116px; }
+  .ai-core { width: 70px; height: 70px; }
+
+  .ai-loading-title { font-size: 1.4rem; }
+  .ai-loading-root  { padding: 2rem 1rem; gap: 1.5rem; }
+}
