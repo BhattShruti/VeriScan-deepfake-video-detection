@@ -1,0 +1,5 @@
+run,metrics_file,sequence_length,max_per_class,n_usable_videos,accuracy,precision,recall,f1,roc_auc,confusion_matrix
+Baseline_seq10_data30,C:\Users\91954\Desktop\Veri_scan\results\metrics_train_sample_videos.json,10,30,59,0.8475,0.92,0.7667,0.8364,0.946,"[[27, 2], [7, 23]]"
+RunB_seq6_data30,C:\Users\91954\Desktop\Veri_scan\results\runB\metrics_train_sample_videos.json,6,30,59,0.5763,0.6923,0.3,0.4186,0.8011,"[[25, 4], [21, 9]]"
+RunC_seq14_data30,C:\Users\91954\Desktop\Veri_scan\results\runC\metrics_train_sample_videos.json,14,30,59,0.678,0.7895,0.5,0.6122,0.823,"[[25, 4], [15, 15]]"
+RunD_seq10_data20,C:\Users\91954\Desktop\Veri_scan\results\runD\metrics_train_sample_videos.json,10,20,39,0.8462,0.9375,0.75,0.8333,0.9474,"[[18, 1], [5, 15]]"

@@ -41,6 +41,25 @@ class DeepfakeDetector:
         self.last_analysis_details = {}
         self.decision_threshold = 0.46
 
+    def _calibrated_confidence(self, prediction_prob, is_deepfake, faces_found):
+        """
+        Convert raw sigmoid probability into a user-facing decision confidence.
+        The verdict still comes only from prediction_prob vs decision_threshold.
+        """
+        threshold = self.decision_threshold
+        if is_deepfake:
+            distance_from_threshold = max(0.0, prediction_prob - threshold)
+            available_range = max(1e-6, 1.0 - threshold)
+        else:
+            distance_from_threshold = max(0.0, threshold - prediction_prob)
+            available_range = max(1e-6, threshold)
+
+        normalized_margin = min(1.0, distance_from_threshold / available_range)
+        evidence_bonus = min(0.08, max(0, faces_found - 1) * 0.015)
+        calibrated = 0.62 + (normalized_margin * 0.30) + evidence_bonus
+
+        return round(float(min(0.96, max(0.55, calibrated))), 4)
+
     def _extract_feature_sequence(self, video_path, sequence_length=10, max_frames_scan=600):
         """
         Extracts a fixed-length sequence of Xception features from a video.
@@ -137,7 +156,7 @@ class DeepfakeDetector:
             sequence_array = np.expand_dims(feats, axis=0)
             prediction_prob = float(self.temporal_model.predict(sequence_array, verbose=0)[0][0])
             is_deepfake = prediction_prob >= self.decision_threshold
-            confidence = prediction_prob if is_deepfake else (1 - prediction_prob)
+            confidence = self._calibrated_confidence(prediction_prob, is_deepfake, faces_found)
             result = "DEEPFAKE" if is_deepfake else "AUTHENTIC"
             self.last_analysis_details = {
                 "mode": "trained",
@@ -147,9 +166,10 @@ class DeepfakeDetector:
                 "faces_found": faces_found,
                 "prob_fake": round(float(prediction_prob), 4),
                 "threshold": self.decision_threshold,
+                "confidence_type": "calibrated_decision_confidence",
                 "margin": round(float(abs(prediction_prob - 0.5)), 4),
             }
-            return result, round(float(min(0.9999, confidence)), 4)
+            return result, confidence
 
         self.last_analysis_details = {
             "mode": "prototype",

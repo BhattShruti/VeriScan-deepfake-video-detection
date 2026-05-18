@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-05-13T14:11:26",
+  "dataset": "train_sample_videos",
+  "n_total_videos_listed": 40,
+  "n_usable_videos": 39,
+  "sequence_length": 10,
+  "threshold": 0.5,
+  "accuracy": 0.8461538461538461,
+  "precision": 0.9375,
+  "recall": 0.75,
+  "f1": 0.8333333333333334,
+  "roc_auc": 0.9473684210526316,
+  "confusion_matrix": [
+    [
+      18,
+      1
+    ],
+    [
+      5,
+      15
+    ]
+  ],
+  "classification_report": "              precision    recall  f1-score   support\n\n           0     0.7826    0.9474    0.8571        19\n           1     0.9375    0.7500    0.8333        20\n\n    accuracy                         0.8462        39\n   macro avg     0.8601    0.8487    0.8452        39\nweighted avg     0.8620    0.8462    0.8449        39\n"
+}

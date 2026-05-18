@@ -2,10 +2,10 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import Button from '../components/Button'
 import InteractiveCard from '../components/InteractiveCard'
-import Logo from '../components/Logo'
 import FeatureIcons from '../components/FeatureIcons'
 import CodeSnippet from '../components/CodeSnippet'
 import NetworkNodes from '../components/NetworkNodes'
+import gbpuatLogoCircle from '../assets/gbpuat_logo_circle.png'
 
 const Home = () => {
   const navigate = useNavigate()
@@ -32,7 +32,28 @@ const Home = () => {
               transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
             >
               <div className="flex items-center justify-center gap-4 mb-4">
-                <Logo size={80} animated={true} />
+                <motion.div
+                  className="rounded-full overflow-hidden shrink-0 flex items-center justify-center bg-white"
+                  style={{
+                    width: '92px',
+                    height: '92px',
+                    boxShadow: '0 0 18px rgba(0, 212, 255, 0.45)'
+                  }}
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <img
+                    src={gbpuatLogoCircle}
+                    alt="University Logo"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transform: 'scale(1.2)',
+                      objectPosition: 'center'
+                    }}
+                  />
+                </motion.div>
                 <motion.h1
                   className="text-6xl md-text-7xl font-bold bg-gradient-text"
                   style={{ filter: 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.5))' }}
@@ -46,7 +67,7 @@ const Home = () => {
                 <div className="w-3 h-3 rounded-full bg-accent-cyan animate-pulse"></div>
               </div>
             </motion.div>
-            
+
             <motion.p
               className="text-2xl md-text-3xl text-white-90 font-semibold mb-2"
               initial={{ y: 20, opacity: 0 }}
@@ -83,9 +104,9 @@ const Home = () => {
                 🔍 Scan Video for Deepfakes
               </Button>
             </motion.div>
-            
+
             <FeatureIcons />
-            
+
             {/* Code snippet showcase */}
             <motion.div
               className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4"

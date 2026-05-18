@@ -91,7 +91,6 @@ const Upload = () => {
         <InteractiveCard glowColor={uploading ? "#00ffff" : "#8b5cf6"}>
           <div className="space-y-8">
             {uploading ? (
-              /* ── AI Loading Screen ── */
               <AILoadingScreen />
             ) : (
               /* Upload Form View */
